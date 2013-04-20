@@ -60,6 +60,11 @@
         "icon": "{{baseDir}}templates/assets/plugins/wikipedia/wikipedia-icon.png"
       },
       {
+        "type": "aspectratio",
+        "displayName": "Aspect Ratio",
+        "icon": "{{baseDir}}templates/assets/plugins/aspectratio/aspectratio-icon.png"
+      },
+      {
         "type": "sequencer",
         "hidden": true,
         "icon": "{{baseDir}}resources/icons/media.png"
