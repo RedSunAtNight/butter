@@ -146,6 +146,9 @@
           if ( element ) {
             getElementQuarantine().appendChild( element );
           }
+          console.log('Object being removed: ' + JSON.stringify(_this.sequenceIDs[options._clip.media.id]));
+          delete _this.sequenceIDs[options._clip.media.id]; // HC - don't want entries relating to unused clips clogging up the works
+          console.log('SequenceIDs object is now ' + JSON.stringify(_this.sequenceIDs));
           options._clip.destroy();
         }
 
@@ -163,6 +166,7 @@
       };
 
       options.addSource = function() {
+        var _sequenceIDs = _this.sequenceIDs || {}; // HC - declared in here so addSource can be used outside _setup
         if ( options.loadTimeout ) {
           clearTimeout( options.loadTimeout );
         }
@@ -183,6 +187,9 @@
         } else {
           options._clip.on( "loadedmetadata", options.readyEvent );
         }
+        _sequenceIDs[options._clip.media.id] = {start:options.start, end:options.end}; // HC
+        _this.sequenceIDs = _sequenceIDs; // HC - saved in the Popcorn instance, so it can be accessed by other plugins
+        console.log('sequenceIDs object is now ' + JSON.stringify(_this.sequenceIDs));
       };
 
       options._onProgress = function() {
@@ -371,6 +378,7 @@
       }
     },
     _update: function( options, updates ) {
+      var _this = this;
       if ( updates.hasOwnProperty( "duration" ) ) {
         options.duration = updates.duration;
       }
@@ -435,7 +443,10 @@
           }
           options.addSource();
         }
-      }
+      } else { // HC
+        _this.sequenceIDs[options._clip.media.id] = {start:options.start, end:options.end}; // HC - if the source is updated, this will be done in options.addSource. Otherwise, make sure to do the update here.
+        console.log('sequenceIDs object is now ' + JSON.stringify(_this.sequenceIDs));
+      } // HC
       if ( updates.hasOwnProperty( "mute" ) ) {
         options.mute = updates.mute;
         options._volumeEvent();
