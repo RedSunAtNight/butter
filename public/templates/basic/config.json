@@ -9,7 +9,8 @@
     "image": "{{baseDir}}templates/assets/editors/image/image-editor.js",
     "text": "{{baseDir}}templates/assets/editors/text/text-editor.js",
     "twitter": "{{baseDir}}templates/assets/editors/twitter/twitter-editor.js",
-    "aspectratio": "{{baseDir}}templates/assets/editors/aspectratio/aspectratio-editor.js"
+    "aspectratio": "{{baseDir}}templates/assets/editors/aspectratio/aspectratio-editor.js",
+    "colormanip": "{{baseDir}}templates/assets/editors/colormanip/colormanip-editor.js"
   },
   "maxPluginZIndex": 1000
 }

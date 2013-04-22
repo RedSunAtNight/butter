@@ -65,6 +65,11 @@
         "icon": "{{baseDir}}templates/assets/plugins/aspectratio/aspectratio-icon.png"
       },
       {
+        "type": "colormanip",
+        "displayName": "Color Manipulation",
+        "icon": "{{baseDir}}templates/assets/plugins/colormanip/colormanip-icon.png"
+      },
+      {
         "type": "sequencer",
         "hidden": true,
         "icon": "{{baseDir}}resources/icons/media.png"

@@ -1,0 +1,46 @@
+<!--  This Source Code Form is subject to the terms of the MIT license
+      If a copy of the MIT license was not distributed with this file, you can
+      obtain one at https://raw.github.com/mozilla/butter/master/LICENSE -->
+
+<div class="butter-editor image-editor allow-scrollbar">
+  <h1>Color Balance</h1>
+  <div class="butter-editor-body scrollbar-container">
+    <div class="editor-options-wrapper scrollbar-outer">
+      <div class="error-message-container">
+        <div class="error-message"></div>
+      </div>
+      <div class="editor-options scrollbar-inner">
+        <fieldset class="ratio-selector">
+          <label>Coloring</label>
+          <select id="coloring-select" data-manifest-key="coloring">
+            <option value="color-no-change">As-is</option>
+            <option value="blackwhite">Black and white</option>
+            <option value="sepia">Sepia</option>
+            <option value="custom">Custom</option>
+          </select>
+        </fieldset>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+  .ratio-selector > select {
+    width: 50%;
+  }
+
+  .method-selector > select {
+    width: 50%;
+  }
+
+  .image-number > input {
+    width: 35%;
+  }
+
+
+  .image-text {
+    font-size: 10px;
+  }
+
+</style>
