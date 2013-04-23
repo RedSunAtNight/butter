@@ -9,8 +9,7 @@
 *   will not allow reading data that has been copied from an external
 *   source onto an invisible canvas.
 *
-*   TODO: Center color canvas over video element.
-*         Figure out how to play nice with aspect ratio.
+*   TODO: Figure out how to play nice with aspect ratio.
 *
 *   Color Manipulation Plug-in
 *
@@ -354,8 +353,19 @@
                     var candiv = document.createElement('div');
                     candiv.style.position = 'absolute';
                     _mediaHolder.appendChild(candiv);
-                    candiv.style.top = _media.offsetTop + 'px'; // so that the canvas will appear over the video
-                    candiv.style.left = _media.offsetLeft + 'px';
+                    // If the video is not the same dimensions as the video element, we need to make sure the canvas is centered
+                    if (options.isHeightDiff) {
+                        var topPosition = (_media.offsetHeight - h) / 2;
+                        candiv.style.top = topPosition + 'px';
+                    } else {
+                        candiv.style.top = _media.offsetTop + 'px';
+                    }
+                    if (options.isWidthDiff) {
+                        var leftPosition = (_media.offsetWidth - w) / 2;
+                        candiv.style.left = leftPosition + 'px';
+                    } else {
+                        candiv.style.left = _media.offsetLeft + 'px';
+                    }
                     _colorCanvas = document.createElement('canvas');
                     _colorCanvas.setAttribute('id', options.colorID);
                     _colorCanvas.style.display = 'none';
