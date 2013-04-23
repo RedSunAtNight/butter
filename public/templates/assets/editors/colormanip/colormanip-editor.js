@@ -9,7 +9,7 @@
 
   var Editor = Butter.Editor;
 
-  Editor.register( "aspectratio", "load!{{baseDir}}templates/assets/editors/colormanip/colormanip-editor.html",
+  Editor.register( "colormanip", "load!{{baseDir}}templates/assets/editors/colormanip/colormanip-editor.html",
                    function( rootElement, butter, compiledLayout ) {
 
     var _rootElement = rootElement,
