@@ -1,0 +1,34 @@
+Changes made by RedsunAtNight:
+
+public
+    ADDED DIR videos
+        ADDED FILE catVid.ogg (for demo purposes)
+    src
+        popcorn.js ADDED TO FILE
+        default-config.json ADDED TO FILE
+    templates
+        basic
+            index.html ADDED TO FILE
+            config.json ADDED TO FILE
+        assets
+            plugins
+                ADDED DIR aspectratio
+                    ADDED FILE popcorn.aspectratio.js
+                    ADDED FILE aspectratio-icon.png
+                ADDED DIR colormanip
+                    ADDED FILE popcorn.colormanip.js
+                    ADDED FILE colormanip-icon.png
+                sequencer
+                    popcorn.sequencer.js ADDED TO FILE
+                        (in _setup: var _sequenceIDs = _this.sequenceIDs || {};
+                            _sequenceIDs[options._clip.media.id] = {start:options.start, end:options.end};
+                        Added related pieces to _update and options.teardown; it seems to work right)
+            editors
+                ADDED DIR aspectratio
+                    ADDED FILE aspectratio-editor.js
+                    ADDED FILE aspectratio-editor.html
+                    ADDED FILE aspectratio.js
+                ADDED DIR colormanip
+                    ADDED FILE colormanip-editor.js
+                    ADDED FILE colormanip-editor.html
+                    ADDED FILE colormanip.js
